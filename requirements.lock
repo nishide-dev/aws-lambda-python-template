@@ -8,3 +8,46 @@
 #   with-sources: false
 
 -e file:.
+annotated-types==0.6.0
+    # via pydantic
+anyio==4.3.0
+    # via httpx
+    # via starlette
+certifi==2024.2.2
+    # via httpcore
+    # via httpx
+click==8.1.7
+    # via uvicorn
+fastapi==0.110.2
+    # via aws-lambda-python-template
+h11==0.14.0
+    # via httpcore
+    # via uvicorn
+httpcore==1.0.5
+    # via httpx
+httpx==0.27.0
+    # via aws-lambda-python-template
+idna==3.7
+    # via anyio
+    # via httpx
+mangum==0.17.0
+    # via aws-lambda-python-template
+pydantic==2.7.0
+    # via aws-lambda-python-template
+    # via fastapi
+pydantic-core==2.18.1
+    # via pydantic
+python-dotenv==1.0.1
+    # via aws-lambda-python-template
+sniffio==1.3.1
+    # via anyio
+    # via httpx
+starlette==0.37.2
+    # via fastapi
+typing-extensions==4.11.0
+    # via fastapi
+    # via mangum
+    # via pydantic
+    # via pydantic-core
+uvicorn==0.29.0
+    # via aws-lambda-python-template
