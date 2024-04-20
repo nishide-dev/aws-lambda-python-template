@@ -2,7 +2,8 @@ FROM public.ecr.aws/docker/library/python:3.12.0-slim-bullseye
 
 # requirements-dev.lockからrequirements.txtを生成
 COPY requirements-dev.lock /tmp/requirements-dev.lock
-RUN sed '/^-e file:.*/d' /tmp/requirements-dev.lock > /tmp/requirements.txt
+RUN --mount=type=cache,target=/root/.cache/pip \
+    sed '/^-e file:.*/d' /tmp/requirements-dev.lock > /tmp/requirements.txt
 
 # requirements.txtをコピー
 COPY /tmp/requirements.txt /app/requirements.txt
