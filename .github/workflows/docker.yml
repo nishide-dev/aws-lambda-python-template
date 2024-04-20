@@ -17,7 +17,7 @@ jobs:
       - name: Lint Dockerfile
         uses: hadolint/hadolint-action@v3.1.0
         with:
-          dockerfile: Dockerfile
+          dockerfile: ./docker/tests/test.Dockerfile
 
   build:
     runs-on: ubuntu-latest
@@ -36,7 +36,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          file: ./Dockerfile
+          file: ./docker/tests/test.Dockerfile
           push: false
           tags: latest
           cache-from: type=gha
