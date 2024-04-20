@@ -21,6 +21,6 @@ async def test_root_get(async_client: TestClient) -> None:
 
 @pytest.mark.asyncio()
 async def test_root_post(async_client: TestClient) -> None:
-    response = async_client.post("/", json={"content": "Hello World"})
+    response = async_client.post("/events", json={"content": "Hello World"})
     assert response.status_code == 200
     assert response.json() == {"message": "Hello World"}
